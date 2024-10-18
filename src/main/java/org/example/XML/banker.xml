@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bankers>
+    <Banker>
+        <BankerID>200</BankerID>
+        <PersonID>1</PersonID>
+        <LicenseNumber>ABC12345</LicenseNumber>
+        <DepartmentID>10</DepartmentID>
+    </Banker>
+    <Banker>
+        <BankerID>201</BankerID>
+        <PersonID>2</PersonID>
+        <LicenseNumber>XYZ67890</LicenseNumber>
+        <DepartmentID>11</DepartmentID>
+    </Banker>
+</Bankers>

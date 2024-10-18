@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Customers>
+    <Customer>
+        <CustomerID>100</CustomerID>
+        <PersonID>1</PersonID>
+        <AccountID>500</AccountID>
+    </Customer>
+    <Customer>
+        <CustomerID>101</CustomerID>
+        <PersonID>2</PersonID>
+        <AccountID>501</AccountID>
+    </Customer>
+</Customers>

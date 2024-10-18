@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Accounts>
+    <Account>
+        <AccountID>500</AccountID>
+        <CustomerID>100</CustomerID>
+        <AccountNumber>123456789</AccountNumber>
+        <Balance>1000.00</Balance>
+    </Account>
+    <Account>
+        <AccountID>501</AccountID>
+        <CustomerID>101</CustomerID>
+        <AccountNumber>987654321</AccountNumber>
+        <Balance>2000.00</Balance>
+    </Account>
+</Accounts>
