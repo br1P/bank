@@ -1,0 +1,11 @@
+{
+  "Customer": {
+    "customerID": 501,
+    "person": {
+      "personID": 101,
+      "name": "John",
+      "lastName": "Doe"
+    },
+    "accountID": 301
+  }
+}

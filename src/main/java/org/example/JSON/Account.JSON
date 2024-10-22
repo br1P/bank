@@ -1,0 +1,8 @@
+{
+  "Account": {
+    "accountID": 101,
+    "customerID": 202,
+    "accountNumber": "ACC123456789",
+    "balance": 1500.75
+  }
+}

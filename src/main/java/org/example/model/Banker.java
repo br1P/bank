@@ -1,28 +1,27 @@
 package org.example.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
-@XmlRootElement(name = "Banker")
-@XmlType(propOrder = { "bankerID", "person", "licenseNumber","departmentID","salary" })
+@JsonRootName(value = "Banker")
 public class Banker {
 
+    @JsonProperty("bankerID")
     private int bankerID;
-    private Person person;
+
+    @JsonProperty("person")
+    private Person person; // Complex object
+
+    @JsonProperty("licenseNumber")
     private String licenseNumber;
+
+    @JsonProperty("departmentID")
     private int departmentID;
+
+    @JsonProperty("salary")
     private double salary;
 
-
-    public Banker(){};
-    public Banker(Person person, String licenseNumber, int departmentID, double salary) {
-        this.person = person;
-        this.licenseNumber = licenseNumber;
-        this.departmentID = departmentID;
-        this.salary = salary;
-    }
-
+    public Banker() {}
 
     public Banker(int bankerID, Person person, String licenseNumber, int departmentID, double salary) {
         this.bankerID = bankerID;
@@ -32,7 +31,14 @@ public class Banker {
         this.salary = salary;
     }
 
-    @XmlElement(name="BankerID")
+    public Banker(Person person, String licenseNumber, int departmentID, double salary) {
+        this.person = person;
+        this.licenseNumber = licenseNumber;
+        this.departmentID = departmentID;
+        this.salary = salary;
+    }
+
+    // @XmlElement(name="BankerID")
     public int getBankerID() {
         return bankerID;
     }
@@ -40,7 +46,7 @@ public class Banker {
     public void setBankerID(int bankerID) {
         this.bankerID = bankerID;
     }
-    @XmlElement(name="PersonID")
+   // @XmlElement(name="PersonID")
     public Person getPerson() {
         return person;
     }
@@ -48,7 +54,7 @@ public class Banker {
     public void setPerson(Person person) {
         this.person = person;
     }
-    @XmlElement(name="LicenseNumber")
+   // @XmlElement(name="LicenseNumber")
     public String getLicenseNumber() {
         return licenseNumber;
     }
@@ -56,7 +62,7 @@ public class Banker {
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
-    @XmlElement(name="DepartmentID")
+   // @XmlElement(name="DepartmentID")
     public int getDepartmentID() {
         return departmentID;
     }
@@ -64,7 +70,7 @@ public class Banker {
     public void setDepartmentID(int departmentID) {
         this.departmentID = departmentID;
     }
-    @XmlElement(name="Salary")
+  //  @XmlElement(name="Salary")
     public double getSalary() {
         return salary;
     }

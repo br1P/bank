@@ -1,0 +1,21 @@
+[ {
+  "bankerID" : 201,
+  "person" : {
+    "personID" : 101,
+    "name" : "John",
+    "lastName" : "Doe"
+  },
+  "licenseNumber" : "L12345",
+  "departmentID" : 1,
+  "salary" : 50000.0
+}, {
+  "bankerID" : 202,
+  "person" : {
+    "personID" : 102,
+    "name" : "Chris",
+    "lastName" : "Phrat"
+  },
+  "licenseNumber" : "L67890",
+  "departmentID" : 2,
+  "salary" : 55000.0
+} ]
