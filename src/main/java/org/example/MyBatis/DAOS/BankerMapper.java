@@ -14,7 +14,21 @@ public interface BankerMapper {
     @Select("SELECT * FROM Banker WHERE bankerID = #{bankerID}")
     Banker selectBankerById(int bankerID);
 
-    @Select("SELECT * FROM Banker")
+    @Select("""
+        SELECT 
+            b.BankerID,
+            p.Name,
+            p.LastName,
+            b.LicenseNumber,
+            b.Salary,
+            d.DepartmentName
+        FROM 
+            Banker b
+        JOIN 
+            Person p ON b.PersonID = p.PersonID
+        JOIN 
+            Department d ON b.DepartmentID = d.DepartmentID
+    """)
     List<Banker> selectAllBankers();
 
     @Update("UPDATE Banker SET licenseNumber = #{licenseNumber}, departmentID = #{departmentID}, salary = #{salary} WHERE bankerID = #{bankerID}")
