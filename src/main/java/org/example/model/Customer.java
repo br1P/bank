@@ -1,23 +1,19 @@
 package org.example.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement(name = "Customer")
-@XmlType(propOrder = { "customerID", "person", "accountID"})
 public class Customer {
 
+    @JsonProperty("CustomerID")
     private int customerID;
-    private Person person;
+
+    @JsonProperty("Person")
+    private Person person; // Complex object
+
+    @JsonProperty("AccountID")
     private int accountID;
 
-
-    public Customer(){};
-    public Customer(Person person, int accountID) {
-        this.person = person;
-        this.accountID = accountID;
-    }
+    public Customer() {}
 
     public Customer(int customerID, Person person, int accountID) {
         this.customerID = customerID;
@@ -25,7 +21,12 @@ public class Customer {
         this.accountID = accountID;
     }
 
-    @XmlElement(name="CustomerID")
+    public Customer(Person person, int accountID) {
+        this.person = person;
+        this.accountID = accountID;
+    }
+
+    //@XmlElement(name="CustomerID")
     public int getCustomerID() {
         return customerID;
     }
@@ -34,7 +35,7 @@ public class Customer {
         this.customerID = customerID;
     }
 
-    @XmlElement(name="PersonID")
+   // @XmlElement(name="PersonID")
     public Person getPerson() {
         return person;
     }
@@ -43,7 +44,7 @@ public class Customer {
         this.person = person;
     }
 
-    @XmlElement(name="AccountID")
+    //@XmlElement(name="AccountID")
     public int getAccountID() {
         return accountID;
     }

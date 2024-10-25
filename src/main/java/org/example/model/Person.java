@@ -1,24 +1,21 @@
 package org.example.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
-@XmlRootElement(name="Person")
-@XmlType(propOrder = { "personID", "name", "lastName" })
+@JsonRootName(value = "Person")
 public class Person {
 
+    @JsonProperty("personID")
     private int personID;
+
+    @JsonProperty("name")
     private String name;
+
+    @JsonProperty("lastName")
     private String lastName;
 
-
     public Person() {}
-
-    public Person(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
-    }
 
     public Person(int personID, String name, String lastName) {
         this.personID = personID;
@@ -26,8 +23,11 @@ public class Person {
         this.lastName = lastName;
     }
 
+    public Person(String name, String lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
 
-    @XmlElement(name="PersonID")
     public int getPersonID() {
         return personID;
     }
@@ -36,7 +36,6 @@ public class Person {
         this.personID = personID;
     }
 
-    @XmlElement(name="Name")
     public String getName() {
         return name;
     }
@@ -45,7 +44,6 @@ public class Person {
         this.name = name;
     }
 
-    @XmlElement(name="LastName")
     public String getLastName() {
         return lastName;
     }

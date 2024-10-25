@@ -1,20 +1,23 @@
 package org.example.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@XmlRootElement(name = "Account")
-@XmlType(propOrder = { "accountID", "customerID", "accountNumber","balance" })
 public class Account {
 
+    @JsonProperty("AccountID")
     private int accountID;
+
+    @JsonProperty("CustomerID")
     private int customerID;
+
+    @JsonProperty("AccountNumber")
     private String accountNumber;
+
+    @JsonProperty("Balance")
     private double balance;
 
-    public Account() {
-    };
+    public Account() {}
 
     public Account(int accountID, int customerID, String accountNumber, double balance) {
         this.accountID = accountID;
@@ -23,13 +26,12 @@ public class Account {
         this.balance = balance;
     }
 
-
-    public Account(String accountNumber, double balance) {
+    public Account(String accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
 
-    @XmlElement(name="AccountID")
+    // @XmlElement(name="AccountID")
     public int getAccountID() {
         return accountID;
     }
@@ -38,7 +40,7 @@ public class Account {
         this.accountID = accountID;
     }
 
-    @XmlElement(name="CustomerID")
+  //  @XmlElement(name="CustomerID")
     public int getCustomerID() {
         return customerID;
     }
@@ -47,7 +49,7 @@ public class Account {
         this.customerID = customerID;
     }
 
-    @XmlElement(name="AccountNumber")
+ //   @XmlElement(name="AccountNumber")
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -56,7 +58,7 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    @XmlElement(name="Balance")
+ //   @XmlElement(name="Balance")
     public double getBalance() {
         return balance;
     }

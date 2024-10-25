@@ -1,9 +1,8 @@
-package org.example.util;
+package org.example.util.MenuDAOS;
 
 import org.example.DAO.BankerDAO;
 import org.example.DAO.CustomerDAO;
 import org.example.DAO.DepartmentDAO;
-import org.example.util.ConnectionPool;
 
 import java.util.Scanner;
 
